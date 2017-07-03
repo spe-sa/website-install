@@ -99,3 +99,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# our content directories
+/website/
+/website_content/
+/website_static/
+.git/
+.DS_Store

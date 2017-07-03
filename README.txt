@@ -1,3 +1,5 @@
+These instructions are intended to get a development environment set up and running for the SPE website project on OSX.  For other OS's please insert instructions later per OS when needed.
+
 MYSQL
 -------
 INSTALL DOCKER
@@ -36,16 +38,19 @@ pyenv install 2.7.13
 
 [OPTIONALLY] install latest 3.x version of python
 pyenv install 3.6.1
+00.
 
 SET VIRTUAL ENV FOR speweb to point to the 2.x version
 pyenv virtualenv 2.7.13 speweb
+
+LOAD CODE: run ./sync-code.sh  (creates the website folder with all code)
 
 ( from the website directory )
 pyenv local speweb
 NOTE: will create a .pyenv file that will automatically set the environment when you cd to this direcotry or below
 
 
-SCRIPTS (TO BE RUN PERIODICALLY)
+SCRIPTS (TO BE RUN PERIODICALLY) - The first time will set up; later will refresh. RUN EACH ONCE TO START WITH
 --------
 
 sync-code.sh
@@ -61,12 +66,13 @@ sync-files.sh
     - rsyncs files from production (only one copy with deltas)
     
     
+NOTE: DO NOT PLACE THESE IN YOUR PATH.  I am using relative paths and the scripts expect to be run from the scripts folder.
     
 INTEGRATION WITH IDE
 ----------------------
  - point ide to <home>.env/speweb/ !!! UPDATE LINK !!!
- - point folder to website project folder
- - set the settings and working directory
+ - point working folder to website/mainsite project folder (<installdir>/web/website/mainsite)
+ - set the settings file (<installdir>/web/website/mainsite/settings/local)
  - say yes to build from existing sources
  - create a new django run level picking the same settings as above
  - run -> localhost:8000 should show our homepage
