@@ -1,5 +1,9 @@
 These instructions are intended to get a development environment set up and running for the SPE website project on OSX.  For other OS's please insert instructions later per OS when needed.
 
+cd to install directory: ie, ~/dev/projects/spe
+CLONE THIS CODE TO YOUR NEW PROJECT DIRECTORY
+git clone https://github.com/spe-sa/website-install.git django
+
 MYSQL
 -------
 INSTALL MYSQL CLIENT for scripts (if you don't already have a client)
