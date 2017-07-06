@@ -13,6 +13,10 @@ brew install mysql
 brew services list
 NOTE: for auto startup
 brew services start mysql
+mysql -u root -v
+alter user 'root'@'localhost' identified by 'root';
+exit
+
     
 
 INSTALL CODE (TO BE RUN ONCE) 
