@@ -91,14 +91,14 @@ fi
 echo ""
 echo ""
 # drop any existing database
-mysql -h $DB_HOST -u $DB_USER --password=$DB_PASSWORD -e 'drop database django'
+mysql -h $DB_HOST -u $DB_USER --password=$DB_PASSWORD --protocol=tcp -e 'drop database django'
 # recreate it
-mysql -h $DB_HOST -u $DB_USER --password=$DB_PASSWORD -e 'create database django'
+mysql -h $DB_HOST -u $DB_USER --password=$DB_PASSWORD --protocol=tcp -e 'create database django'
 # restore the data to it
 echo "restoring database[$DB] from backup sql file [$DB_BACKUP_SQL]"
 # mysql -h $DB_HOST --user=$DB_USER --password=$DB_PASSWORD --protocol=tcp $DB < $DB_BACKUP_SQL
 # use pv so we don't just get a blank line for a long time; we can see whats processing
-pv $DB_BACKUP_SQL | mysql -h $DB_HOST --user=$DB_USER --password=$DB_PASSWORD $DB
+pv $DB_BACKUP_SQL | mysql -h $DB_HOST --user=$DB_USER --password=$DB_PASSWORD --protocol=tcp $DB
 echo ""
 echo "database restored"
 echo "done"

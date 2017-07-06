@@ -106,3 +106,4 @@ ENV/
 /website_static/
 .git/
 .DS_Store
+*.sql

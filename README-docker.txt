@@ -2,14 +2,28 @@ These instructions are intended to get a development environment set up and runn
 
 MYSQL
 -------
-INSTALL MYSQL CLIENT for scripts (if you don't already have a client)
-========
-brew install mysql 
-- restart the terminal by choosing Terminal -> Quit from menu bar
-brew services list
-NOTE: for auto startup
-brew services start mysql
-    
+INSTALL DOCKER
+https://docs.docker.com/docker-for-mac/install/
+
+INSTALL Kitematic (Beta) ** Optional
+(from docker pull down -> Get Kitematic)
+
+OPEN Terminal and paste
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=django -d -p 3306:3306 mysql
+
+You should now have a running mysql instance:
+    - to restart/stop/start use Kitematic or
+        - docker stop mysql
+        - docker start mysql
+        - docker restart mysql
+        
+    - to connect to container use Kitematic shell or
+        - docker exec -it mysql bash
+        
+NOTE: not sure if we need this        
+# INSTALL MYSQL CLIENT for scripts (if you don't already have a client)
+# ========
+# brew install mysql 
 
 INSTALL CODE (TO BE RUN ONCE) 
 --------
