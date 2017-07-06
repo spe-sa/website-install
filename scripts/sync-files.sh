@@ -55,6 +55,7 @@ if [[ "$_user_answer" != "y" && "$_user_answer" != "Y" ]]; then
     echo "done"
     exit 0
 fi
+mkdir -p ../$FILES_DIR
 rsync -avz --delete $HOST:$HOST_FILES_DIR ../$FILES_DIR
 echo "synced files: [../$FILES_DIR] from [$HOST:$HOST_FILES_DIR]"
 echo "done"
