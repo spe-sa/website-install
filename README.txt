@@ -16,7 +16,7 @@ brew services start mysql
 mysql -u root -v
 alter user 'root'@'localhost' identified by 'root';
 exit
-
+NOTE: if you get a warning or error about upgrading run: sudo mysql_upgrade
     
 
 INSTALL CODE (TO BE RUN ONCE) 
