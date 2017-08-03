@@ -41,6 +41,9 @@ pyenv install 2.7.13
 pyenv install 3.6.1
 00.
 
+SET GLOBAL ENV FOR TERMINAL IF NOT OVERRIDDEN
+pyenv global 2.7.13
+
 SET VIRTUAL ENV FOR speweb to point to the 2.x version
 pyenv virtualenv 2.7.13 speweb
 
